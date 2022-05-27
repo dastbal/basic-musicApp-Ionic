@@ -1,0 +1,46 @@
+<ion-content>
+  <form action="" (ngSubmit)="login()" [formGroup]="loginForm">
+    <ion-item>
+      <ion-label> Email</ion-label>
+      <ion-input type="email" formControlName="email"> </ion-input>
+    </ion-item>
+    <ng-container
+      *ngIf=" loginForm.get('email').errors?.['required'] &&
+  loginForm.get('email').dirty"
+    >
+      That field is required
+    </ng-container>
+
+    <ion-item>
+      <ion-label> Password</ion-label>
+      <ion-input type="password" formControlName="password"> </ion-input>
+    </ion-item>
+    <ng-container
+      *ngIf=" loginForm.get('email').errors?.['required'] &&
+  loginForm.get('email').dirty"
+    >
+      That field is required
+    </ng-container>
+    <ion-button
+      [disabled]="loginForm.invalid"
+      type="submit"
+      expand="block"
+      shape="round"
+    >
+      Log In
+    </ion-button>
+  </form>
+
+  <ng-container *ngIf="errorMsg"> {{errorMsg}}</ng-container>
+</ion-content>
+<ion-footer>
+  <ion-button
+    routerLink="/register"
+    type="submit"
+    expand="block"
+    fill="outline"
+    shape="round"
+  >
+    Sign Up
+  </ion-button>
+</ion-footer>

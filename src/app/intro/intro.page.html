@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>intro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide *ngFor="let slide of slides">
+      <ion-icon slot="end" (click)="finish()" name="close"></ion-icon>
+      <img src="{{slide.img}}" alt="" />
+      <h1>{{slide.title}}</h1>
+      <h2>{{slide.subTitle}}</h2>
+      <p>{{slide.content}}</p>
+      <ion-icon slot="start" name="{{slide.icon}}"></ion-icon>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
