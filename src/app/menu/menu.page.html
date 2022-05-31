@@ -33,8 +33,9 @@
         <ion-item>
           <ion-icon slot="start" name="home"></ion-icon> Home</ion-item
         >
-        <ion-item>
-          <ion-icon slot="start" name="tool"></ion-icon> settings</ion-item
+        <ion-item (click)="goToSetting()">
+          <ion-icon (click)="goToSetting()" slot="start" name="tool"></ion-icon>
+          settings</ion-item
         >
         <ion-item (click)="logout()">
           <ion-icon slot="start" name="log-out"></ion-icon> Log Out</ion-item

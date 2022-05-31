@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{song}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="selectSong()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <h2 (click)="selectSong(songDta)">{{song}}</h2>
+  </ion-item></ion-content
+>

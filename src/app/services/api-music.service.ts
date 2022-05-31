@@ -12,4 +12,9 @@ export class ApiMusicService {
       'https://platzi-music-api.herokuapp.com/browse/new-releases'
     );
   }
+  getArtistsTopTracks(artistId) {
+    return this.http.get(
+      `https://platzi-music-api.herokuapp.com/artists/${artistId}/top-tracks?country=CO`
+    );
+  }
 }

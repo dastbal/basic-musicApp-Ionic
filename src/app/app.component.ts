@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  image = 'https://picsum.photos/200';
   constructor() {}
 }

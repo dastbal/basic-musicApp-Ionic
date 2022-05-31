@@ -9,7 +9,7 @@
   <h1>Songs</h1>
   <ion-slides [options]="SlideOps">
     <ion-slide *ngFor="let song of songs">
-      <ion-avatar>
+      <ion-avatar (click)="showModalSongs(song)">
         <img [src]="song.images[0].url" />
         <span> {{song.name}}</span>
       </ion-avatar>
@@ -25,3 +25,34 @@
     </ion-slide>
   </ion-slides>
 </ion-content>
+<ion-footer>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-start" size="6"> 0:00</ion-col>
+      <ion-col class="ion-text-end" size="6"> 0:00</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-progress-bar
+    value="0.5"
+    reversed="true"
+    color="primary"
+  ></ion-progress-bar>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="2"> <ion-icon name="heart"></ion-icon></ion-col>
+      <ion-col size="8">
+        <ion-text color="primary" class="ion-text-center">
+          <h2>{{song.name}}</h2>
+        </ion-text></ion-col
+      >
+      <ion-col size="2" class="ion-text-end"
+        ><ion-icon name="play" (click)="play()" *ngIf="!song.playing"></ion-icon
+        ><ion-icon
+          name="pause"
+          (click)="pause()"
+          *ngIf="song.playing"
+        ></ion-icon
+      ></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
